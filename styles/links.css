@@ -1,0 +1,155 @@
+/* Fondo animado con patrón de triángulos dorados */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  overflow-y: auto;
+  background-color: #000;
+  background-image: url('../assets/pattern-bg.png');
+  background-repeat: repeat;
+  background-size: 300px;
+  animation: movePattern 60s linear infinite;
+}
+
+@keyframes movePattern {
+  0% { background-position: 0 0; }
+  100% { background-position: -1000px -1000px; }
+}
+
+/* Contenedor principal */
+.overlay {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Logo centrado */
+.logo {
+  display: block;
+  margin: 0 auto 1rem auto;
+  width: 100px;
+}
+
+/* Títulos */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
+/* Enlaces sociales y de proyectos */
+.links a,
+.projects a {
+  display: block;
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  background-color: #e50914;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.links a:hover,
+.projects a:hover {
+  background-color: #ff2a2a;
+}
+
+/* Secciones */
+.projects h2,
+.contact h2,
+.manifesto h2 {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.projects ul {
+  list-style: none;
+  padding: 0;
+}
+
+.projects li {
+  margin: 0.5rem 0;
+}
+
+.contact a {
+  color: #e50914;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* Manifiesto final */
+.manifesto {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #444;
+}
+
+.manifesto h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.manifesto .typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #e50914;
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+  animation: typing 6s steps(80, end), blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Botón de volver */
+.volver {
+  display: block;
+  margin-top: 3rem;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.volver:hover {
+  color: white;
+}
+
+/* Animaciones de entrada */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

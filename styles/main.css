@@ -1,0 +1,58 @@
+/* Fondo con fractal-bg.png */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: url('../assets/fractal-bg.png') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor centrado */
+.overlay {
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Logo */
+.logo {
+  width: 200px;
+  height: auto;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+/* Botón */
+.btn-nucleo {
+  padding: 1rem 2rem;
+  background-color: #e50914;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 2s ease forwards;
+}
+
+.btn-nucleo:hover {
+  background-color: #ff2a2a;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
