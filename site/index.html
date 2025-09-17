@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rafer</title>
+  <!-- SEO y Open Graph -->
+  <meta name="description" content="Rafer: Revolucionando la experiencia digital. Cultura, precisión y visión en cada pixel.">
+  <meta name="keywords" content="Rafer, diseño digital, experiencia de usuario, branding, cultura digital">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="Rafer">
+  <meta property="og:description" content="Rafer: Revolucionando la experiencia digital. Cultura, precisión y visión.">
+  <meta property="og:image" content="assets/logo-site.svg">
+  <meta property="og:url" content="https://rafer.com">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon y PWA manifest -->
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <img src="assets/logo-site.svg" alt="Rafer Logo" class="logo">
+      <h1 class="title">Rafer</h1>
+      <p class="tagline">
+        Revolucionando la experiencia digital /
+        Revolutionizing digital experience
+      </p>
+    </header>
+
+    <main class="main">
+      <section class="manifesto">
+        <h2>Manifesto</h2>
+        <p lang="es">
+          Rafer es más que diseño. Es cultura, precisión y visión.
+        </p>
+        <p lang="en">
+          Rafer is more than design. It's culture, precision, and vision.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2025 Rafer. Todos los derechos reservados.</p>
+    </footer>
+  </div>
+
+  <!-- Registro de service worker para PWA -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>

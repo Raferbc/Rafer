@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://rafer.com/sitemap.xml
