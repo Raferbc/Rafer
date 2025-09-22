@@ -1,111 +1,113 @@
-/* Reset y base */
+/* 1. Variables globales */
+:root {
+  /* Light theme */
+  --bg-color: #000000;
+  --text-color: #FFFFFF;
+  --accent-color: #D4AF37;
+  --accent-hover: #B3922B;
+
+  /* Dark theme overrides (se activarán con [data-theme="dark"]) */
+  --bg-color-dark: #FFFFFF;
+  --text-color-dark: #000000;
+  --accent-color-dark: #D4AF37;
+  --accent-hover-dark: #B3922B;
+}
+
+/* 2. Tema claro (por defecto) */
+html:not([data-theme="dark"]) {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* 3. Tema oscuro */
+html[data-theme="dark"] {
+  background: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+/* 4. Reset y tipografía */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  background: #000;
-  color: #fff;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.6;
 }
 
-/* Selección de texto */
-::selection {
-  background: #d4af37;
-  color: #000;
+/* 5. Skip link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding: 8px 16px;
+  z-index: 1000;
+  text-decoration: none;
 }
 
-/* Contenedor general */
-.container {
+.skip-link:focus {
+  top: 0;
+}
+
+/* 6. Cabecera y navegación */
+header {
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem;
-  background: url('assets/background-pattern.png') center/cover;
+  padding: 1rem;
 }
 
-/* Animación fade-in */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+header .logo img {
+  width: 48px;
+  height: 48px;
 }
 
-.header, .manifesto h2, .manifesto p, .footer {
-  opacity: 0;
-  animation: fadeInUp 1s ease-in-out forwards;
-}
-
-.header { animation-delay: 0.3s; }
-.manifesto h2 { animation-delay: 0.6s; }
-.manifesto p { animation-delay: 0.9s; }
-.footer { animation-delay: 1.2s; }
-
-/* Header */
-.header {
-  text-align: center;
-}
-
-.logo {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 1rem;
-}
-
-.title {
-  font-size: 2.5rem;
-  color: #fff;
-}
-
-.tagline {
-  font-size: 1rem;
-  color: #d4af37;
-  margin-top: 0.5rem;
-}
-
-/* Main */
-.main {
-  flex: 1;
+nav ul {
+  list-style: none;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  gap: 1rem;
 }
 
-.manifesto {
+nav a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--accent-hover);
+}
+
+/* 7. Pie de página */
+footer {
   text-align: center;
-  margin-bottom: 2rem;
-}
-
-.manifesto h2 {
-  font-size: 1.5rem;
-  color: #d4af37;
-  margin-bottom: 1rem;
-}
-
-.manifesto p {
-  font-size: 1rem;
-  margin: 0.5rem 0;
-}
-
-/* Footer */
-.footer {
-  text-align: center;
+  padding: 1rem;
+  background: rgba(0,0,0,0.2);
   font-size: 0.875rem;
-  color: #777;
-  margin-top: 2rem;
+  color: var(--text-color);
 }
 
-/* Responsivo */
-@media (max-width: 600px) {
-  .title { font-size: 2rem; }
-  .tagline { font-size: 0.9rem; }
+/* 8. Estilos para el botón de Dark Mode */
+.theme-toggle {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: var(--accent-color);
+  border: none;
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  border-radius: 4px;
 }
+
+.theme-toggle:hover,
+.theme-toggle:focus {
+  background: var(--accent-hover);
+}
+
