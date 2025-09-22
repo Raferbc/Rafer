@@ -4,15 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rafer – Automatiza. Inteligencia. Evolución.</title>
+
+  <!-- Tipografía variable: Inter Variable -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="assets/favicon.ico" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Skip link -->
+  <!-- Skip link para usuarios de teclado -->
   <a href="#main-content" class="skip-link">Saltar al contenido</a>
 
-  <!-- Cabecera -->
+  <!-- Cabecera con logo y navegación -->
   <header role="banner">
     <div class="logo">
       <img src="assets/logo-192.png" alt="Logotipo de Rafer" />
@@ -28,9 +37,23 @@
 
   <!-- Contenido principal -->
   <main id="main-content" role="main">
-    <!-- Sección de Servicios -->
-    <!-- Sección de Proyectos -->
-    <!-- Sección de Contacto -->
+    <!-- Sección: Servicios -->
+    <section id="servicios" aria-labelledby="servicios-title">
+      <h2 id="servicios-title">Servicios</h2>
+      <!-- Tu contenido de servicios aquí -->
+    </section>
+
+    <!-- Sección: Proyectos -->
+    <section id="proyectos" aria-labelledby="proyectos-title">
+      <h2 id="proyectos-title">Proyectos</h2>
+      <!-- Tus proyectos destacados aquí -->
+    </section>
+
+    <!-- Sección: Contacto -->
+    <section id="contacto" aria-labelledby="contacto-title">
+      <h2 id="contacto-title">Contacto</h2>
+      <!-- Formulario o información de contacto aquí -->
+    </section>
   </main>
 
   <!-- Pie de página -->
@@ -41,7 +64,7 @@
   <!-- Botón de Dark Mode -->
   <button class="theme-toggle" aria-label="Cambiar tema">Modo oscuro</button>
 
-  <!-- Registro de Service Worker -->
+  <!-- Registro de Service Worker para PWA -->
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js')
@@ -56,7 +79,7 @@
       const html = document.documentElement;
       const btn = document.querySelector('.theme-toggle');
       const storedTheme = localStorage.getItem('theme');
-      const defaultTheme = storedTheme || 
+      const defaultTheme = storedTheme ||
         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
       // Inicializa el tema

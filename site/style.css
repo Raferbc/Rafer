@@ -1,43 +1,49 @@
-/* 1. Variables globales */
+/* 1. Variables globales y tipografía variable */
 :root {
-  /* Light theme */
+  /* Light theme colors */
   --bg-color: #000000;
   --text-color: #FFFFFF;
   --accent-color: #D4AF37;
   --accent-hover: #B3922B;
 
-  /* Dark theme overrides (se activarán con [data-theme="dark"]) */
+  /* Dark theme overrides */
   --bg-color-dark: #FFFFFF;
   --text-color-dark: #000000;
   --accent-color-dark: #D4AF37;
   --accent-hover-dark: #B3922B;
+
+  /* Tipografía variable */
+  --fw-regular: 400;
+  --fw-bold: 700;
 }
 
-/* 2. Tema claro (por defecto) */
+/* Tema claro (por defecto) */
 html:not([data-theme="dark"]) {
   background: var(--bg-color);
   color: var(--text-color);
 }
 
-/* 3. Tema oscuro */
+/* Tema oscuro */
 html[data-theme="dark"] {
   background: var(--bg-color-dark);
   color: var(--text-color-dark);
 }
 
-/* 4. Reset y tipografía */
+/* 2. Reset y box-sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* 3. Tipografía base */
 body {
   font-family: 'Inter', sans-serif;
+  font-variation-settings: 'wght' var(--fw-regular);
   line-height: 1.6;
 }
 
-/* 5. Skip link */
+/* 4. Skip link */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -53,7 +59,7 @@ body {
   top: 0;
 }
 
-/* 6. Cabecera y navegación */
+/* 5. Cabecera y navegación */
 header {
   display: flex;
   align-items: center;
@@ -73,9 +79,9 @@ nav ul {
 }
 
 nav a {
-  color: var(--accent-color);
   text-decoration: none;
-  font-weight: 500;
+  font-variation-settings: 'wght' var(--fw-bold);
+  color: var(--accent-color);
 }
 
 nav a:hover,
@@ -83,16 +89,26 @@ nav a:focus {
   color: var(--accent-hover);
 }
 
+/* 6. Encabezados y secciones */
+h2 {
+  margin-bottom: 0.5rem;
+  font-variation-settings: 'wght' var(--fw-bold);
+}
+
 /* 7. Pie de página */
 footer {
   text-align: center;
   padding: 1rem;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   font-size: 0.875rem;
   color: var(--text-color);
 }
 
-/* 8. Estilos para el botón de Dark Mode */
+footer p {
+  font-variation-settings: 'wght' var(--fw-regular);
+}
+
+/* 8. Botón de Dark Mode */
 .theme-toggle {
   position: fixed;
   bottom: 1rem;
@@ -104,10 +120,10 @@ footer {
   cursor: pointer;
   font-size: 0.875rem;
   border-radius: 4px;
+  font-variation-settings: 'wght' var(--fw-bold);
 }
 
 .theme-toggle:hover,
 .theme-toggle:focus {
   background: var(--accent-hover);
 }
-
