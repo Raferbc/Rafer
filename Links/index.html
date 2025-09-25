@@ -13,97 +13,63 @@
     rel="stylesheet"
   />
 
+  <!-- ✅ Ruta corregida al CSS -->
   <link rel="stylesheet" href="../styles/links.css" />
 </head>
 <body>
-  <!-- Skip link para usuarios de teclado -->
+  <!-- Skip link para accesibilidad -->
   <a href="#main-content" class="skip-link">Saltar al contenido</a>
 
   <!-- Banner con logo e introducción -->
   <div class="overlay" role="banner">
-    <img src="./assets/logo-rafer.png" alt="Logo Rafer" class="logo" />
+    <img src="../assets/logo-rafer.png" alt="Logo Rafer" class="logo" />
     <h1>Rafer</h1>
-    <p>Información. Inteligencia. Evolución.</p>
+    <p>Automatización. Inteligencia. Evolución.</p>
+    <p>Automation. Intelligence. Evolution.</p>
   </div>
 
   <!-- Contenido principal -->
   <main id="main-content" role="main">
     <!-- Sección: Links -->
-    <section aria-labelledby="links-title">
+    <section aria-labelledby="links-title" class="links">
       <h2 id="links-title">Links</h2>
-      <ul class="links-list">
-        <li>
-          <a href="https://rafer-github.io/rafer/site/" target="_blank"
-            >Website</a
-          >
-        </li>
-        <li>
-          <a href="https://linkedin.com/in/usuario" target="_blank"
-            >LinkedIn</a
-          >
-        </li>
-        <li>
-          <a href="https://twitter.com/usuario" target="_blank">Twitter</a>
-        </li>
-        <li>
-          <a href="https://youtube.com/usuario" target="_blank">YouTube</a>
-        </li>
-        <li>
-          <a href="https://instagram.com/usuario" target="_blank"
-            >Instagram</a
-          >
-        </li>
-      </ul>
+      <a href="https://rafer-github.io/rafer/site/" target="_blank">Sitio Web / Website</a>
+      <a href="https://linkedin.com/in/usuario" target="_blank">LinkedIn</a>
+      <a href="https://instagram.com/usuario" target="_blank">Instagram</a>
+      <a href="https://twitter.com/usuario" target="_blank">X (Twitter)</a>
+      <a href="https://youtube.com/usuario" target="_blank">YouTube</a>
     </section>
 
     <!-- Sección: Proyectos -->
-    <section aria-labelledby="projects-title">
-      <h2 id="projects-title">Proyectos</h2>
-      <ul class="projects-list">
-        <li>
-          <a href="https://rafer.com/proyecto1" target="_blank"
-            >Proyecto 1</a
-          >
-        </li>
-        <li>
-          <a href="https://rafer.com/proyecto2" target="_blank"
-            >Proyecto 2</a
-          >
-        </li>
-        <li>
-          <a href="https://rafer.com/proyecto3" target="_blank"
-            >Proyecto 3</a
-          >
-        </li>
-      </ul>
-    </section>
+    <section aria-labelledby="projects-title" class="projects">
+  <h2 id="projects-title">Proyectos / Projects</h2>
+  <a href="https://rafer.com/proyecto1" target="_blank">Proyecto 1 / Project 1</a>
+  <a href="https://rafer.com/proyecto2" target="_blank">Proyecto 2 / Project 2</a>
+  <a href="https://rafer.com/proyecto3" target="_blank">Proyecto 3 / Project 3</a>
+</section>
 
     <!-- Sección: Contacto -->
-    <section aria-labelledby="contact-title">
+    <section aria-labelledby="contact-title" class="contact">
       <h2 id="contact-title">Contacto</h2>
-      <p>
-        <a href="mailto:raulf@rafer.com">raulf@rafer.com</a>
-      </p>
+      <p><a href="mailto:raulf@rafer.com">raulf@rafer.com</a></p>
     </section>
   </main>
 
-  <!-- Botón de Dark Mode -->
+  <!-- ✅ Botón de Dark Mode -->
   <button class="theme-toggle" aria-label="Cambiar tema">Modo oscuro</button>
 
-  <!-- Script de Dark Mode Toggle -->
+  <!-- ✅ Script funcional de Dark Mode -->
   <script>
-    (function() {
+    (function () {
       const html = document.documentElement;
       const btn = document.querySelector('.theme-toggle');
       const stored = localStorage.getItem('theme');
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       const theme = stored || (prefersDark ? 'dark' : 'light');
 
-      // Inicializa el tema
       html.setAttribute('data-theme', theme);
       btn.textContent = theme === 'dark' ? 'Modo claro' : 'Modo oscuro';
 
-      // Alterna y guarda la preferencia
       btn.addEventListener('click', () => {
         const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         html.setAttribute('data-theme', next);
@@ -114,4 +80,3 @@
   </script>
 </body>
 </html>
-```
