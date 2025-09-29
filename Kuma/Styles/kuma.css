@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: white;
+  background-color: #000;
+  background-image: url('../assets/kuma-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(2px);
+  overflow-y: auto;
+}
+
+/* Contenedor principal */
+.overlay {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* Logo */
+.logo {
+  display: block;
+  margin: 0 auto 1rem auto;
+  width: 120px;
+}
+
+/* Títulos */
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
+/* Enlaces */
+.links a {
+  display: block;
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  background-color: #e50914;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  font-weight: 700;
+}
+
+.links a:hover {
+  background-color: #ff2a2a;
+}
+
+/* Contacto */
+.contact h2 {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: white;
+}
+
+.contact a {
+  color: #e50914;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* Botón volver */
+.volver {
+  display: block;
+  margin-top: 3rem;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.volver:hover {
+  color: white;
+}
+
+/* Animación */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
