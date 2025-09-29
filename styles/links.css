@@ -1,40 +1,25 @@
-/* 1. Variables globales y tipografía */
 :root {
   --font-main: 'Inter', 'Segoe UI', sans-serif;
-  --fw-regular: 400;
-  --fw-bold: 700;
-
-  /* Tema oscuro (por defecto) */
-  --bg: #000;
+  --accent: #e50914;
+  --accent-hover: #ff2a2a;
   --fg: #fff;
-  --fg-muted: #ccc;
-  --accent: #e50914;
-  --accent-hover: #ff2a2a;
-  --overlay-bg: rgba(0, 0, 0, 0.6);
-  --border: #444;
+  --bg: #000;
+  --overlay: rgba(0, 0, 0, 0.6);
 }
 
-/* Tema claro */
 html[data-theme="light"] {
-  --bg: #fff;
   --fg: #000;
-  --fg-muted: #333;
-  --accent: #e50914;
-  --accent-hover: #ff2a2a;
-  --overlay-bg: rgba(255, 255, 255, 0.6);
-  --border: #ccc;
+  --bg: #fff;
+  --overlay: rgba(255, 255, 255, 0.6);
 }
 
-/* 2. Fondo animado con patrón de triángulos dorados */
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
   font-family: var(--font-main);
-  font-variation-settings: 'wght' var(--fw-regular);
-  color: var(--fg);
-  overflow-y: auto;
   background-color: var(--bg);
+  color: var(--fg);
   background-image: url('../assets/pattern-bg.png');
   background-repeat: repeat;
   background-size: 300px;
@@ -46,50 +31,46 @@ body {
   100% { background-position: -1000px -1000px; }
 }
 
-/* 3. Contenedor principal */
 .overlay {
   max-width: 600px;
   margin: 0 auto;
   padding: 3rem 2rem;
   backdrop-filter: blur(10px);
-  background-color: var(--overlay-bg);
+  background-color: var(--overlay);
   border-radius: 12px;
-  box-sizing: border-box;
   text-align: center;
 }
 
-/* 4. Logo centrado */
 .logo {
   display: block;
   margin: 0 auto 1rem auto;
   width: 100px;
 }
 
-/* 5. Títulos */
 h1 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
-  font-variation-settings: 'wght' var(--fw-bold);
+  font-weight: 700;
 }
 
 p {
   font-size: 1rem;
   margin-bottom: 1rem;
-  color: var(--fg-muted);
+  color: var(--fg);
 }
 
-/* 6. Enlaces sociales y de proyectos */
 .links a,
 .projects a {
   display: block;
   margin: 0.5rem 0;
   padding: 0.8rem;
   background-color: var(--accent);
-  color: var(--fg);
+  color: white;
   text-decoration: none;
   border-radius: 6px;
   transition: background 0.3s ease;
-  font-variation-settings: 'wght' var(--fw-bold);
+  font-weight: 700;
+  text-align: center;
 }
 
 .links a:hover,
@@ -97,113 +78,28 @@ p {
   background-color: var(--accent-hover);
 }
 
-/* 7. Secciones */
-.projects h2,
-.contact h2,
-.manifesto h2 {
+.projects h2 {
   margin-top: 2rem;
   font-size: 1.4rem;
   color: var(--fg);
-  font-variation-settings: 'wght' var(--fw-bold);
-}
-
-.projects ul {
-  list-style: none;
-  padding: 0;
-}
-
-.projects li {
-  margin: 0.5rem 0;
-}
-
-.contact a {
-  color: var(--accent);
-  text-decoration: none;
-  font-variation-settings: 'wght' var(--fw-regular);
-}
-
-.contact a:hover {
-  text-decoration: underline;
-  color: var(--accent-hover);
-}
-
-/* 8. Manifiesto final */
-.manifesto {
-  margin-top: 3rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border);
-}
-
-.manifesto h2 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  color: var(--fg);
-}
-
-.manifesto .typewriter {
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid var(--accent);
-  font-size: 1rem;
-  color: var(--fg-muted);
-  line-height: 1.6;
-  animation: typing 6s steps(80, end), blink 0.7s step-end infinite;
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
-}
-
-/* 9. Botón de volver */
-.volver {
-  display: block;
-  margin-top: 3rem;
-  color: var(--fg-muted);
-  text-decoration: none;
-  font-size: 0.9rem;
   text-align: center;
 }
 
-.volver:hover {
-  color: var(--fg);
-}
-
-/* 10. Animaciones de entrada */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1.5s ease forwards;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 11. Botón de Dark Mode */
 .theme-toggle {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
   background: var(--accent);
   border: none;
-  color: var(--fg);
+  color: white;
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
-  font-variation-settings: 'wght' var(--fw-bold);
+  font-weight: 700;
   border-radius: 4px;
   cursor: pointer;
   transition: background 0.2s;
 }
 
-.theme-toggle:hover,
-.theme-toggle:focus {
+.theme-toggle:hover {
   background: var(--accent-hover);
 }
