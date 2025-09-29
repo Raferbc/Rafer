@@ -1,99 +1,94 @@
-/* 1. Variables globales, tipografía variable y temas */
+/* 1. Variables globales y tipografía */
 :root {
-  /* Ejes tipográficos */
+  --font-main: 'Inter', 'Segoe UI', sans-serif;
   --fw-regular: 400;
-  --fw-bold:    700;
+  --fw-bold: 700;
 
-  /* Colores de acento */
-  --accent:        #D4AF37;
-  --accent-hover:  #B3922B;
-
-  /* Fondo y texto (se usan en body y elementos de texto) */
-  --bg:             #000000;
-  --fg:             #FFFFFF;
-  --bg-overlay:     rgba(0, 0, 0, 0.6);
+  /* Tema oscuro (por defecto) */
+  --bg: #000;
+  --fg: #fff;
+  --fg-muted: #ccc;
+  --accent: #e50914;
+  --accent-hover: #ff2a2a;
+  --overlay-bg: rgba(0, 0, 0, 0.6);
+  --border: #444;
 }
 
-/* Tema invertido (modo claro sobre patrón) */
-html[data-theme="dark"] {
-  --bg:           #FFFFFF;
-  --fg:           #000000;
-  --bg-overlay:   rgba(255, 255, 255, 0.6);
+/* Tema claro */
+html[data-theme="light"] {
+  --bg: #fff;
+  --fg: #000;
+  --fg-muted: #333;
+  --accent: #e50914;
+  --accent-hover: #ff2a2a;
+  --overlay-bg: rgba(255, 255, 255, 0.6);
+  --border: #ccc;
 }
 
 /* 2. Fondo animado con patrón de triángulos dorados */
 body {
-  min-height: 100vh;
-  padding: 0;
   margin: 0;
-
-  font-family: 'Inter', sans-serif;
+  padding: 0;
+  min-height: 100vh;
+  font-family: var(--font-main);
   font-variation-settings: 'wght' var(--fw-regular);
   color: var(--fg);
-
-  background: var(--bg);
-  background-image: url('./assets/pattern-bg.png');
+  overflow-y: auto;
+  background-color: var(--bg);
+  background-image: url('../assets/pattern-bg.png');
   background-repeat: repeat;
-  background-size: 100px;
+  background-size: 300px;
   animation: movePattern 60s linear infinite;
 }
 
 @keyframes movePattern {
-  0%   { background-position: 0 0; }
+  0% { background-position: 0 0; }
   100% { background-position: -1000px -1000px; }
 }
 
-/* 3. Contenedor principal (overlay/banner) */
+/* 3. Contenedor principal */
 .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  background-color: var(--bg-overlay);
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
   backdrop-filter: blur(10px);
-
-  border: 3px solid var(--accent);
+  background-color: var(--overlay-bg);
   border-radius: 12px;
   box-sizing: border-box;
-
   text-align: center;
 }
 
 /* 4. Logo centrado */
 .logo {
   display: block;
-  margin: auto 1rem auto;
+  margin: 0 auto 1rem auto;
+  width: 100px;
 }
 
-/* 5. Encabezados y párrafos */
+/* 5. Títulos */
 h1 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
-  color: var(--fg);
   font-variation-settings: 'wght' var(--fw-bold);
 }
 
 p {
   font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: var(--fg);
-  font-variation-settings: 'wght' var(--fw-regular);
+  margin-bottom: 1rem;
+  color: var(--fg-muted);
 }
 
-/* 6. Enlaces de Links y Projects */
+/* 6. Enlaces sociales y de proyectos */
 .links a,
 .projects a {
   display: block;
   margin: 0.5rem 0;
-  padding: 0.5rem;
-
+  padding: 0.8rem;
   background-color: var(--accent);
   color: var(--fg);
   text-decoration: none;
   border-radius: 6px;
-  transition: background 0.35s ease;
+  transition: background 0.3s ease;
   font-variation-settings: 'wght' var(--fw-bold);
 }
 
@@ -102,16 +97,16 @@ p {
   background-color: var(--accent-hover);
 }
 
-/* 7. Títulos secundarios en Projects y Contact */
+/* 7. Secciones */
 .projects h2,
-.contact h2 {
+.contact h2,
+.manifesto h2 {
   margin-top: 2rem;
-  font-size: 1.5rem;
-  color: var(--accent);
+  font-size: 1.4rem;
+  color: var(--fg);
   font-variation-settings: 'wght' var(--fw-bold);
 }
 
-/* 8. Listado de proyectos */
 .projects ul {
   list-style: none;
   padding: 0;
@@ -119,10 +114,8 @@ p {
 
 .projects li {
   margin: 0.5rem 0;
-  padding: 0;
 }
 
-/* 9. Enlaces de contacto */
 .contact a {
   color: var(--accent);
   text-decoration: none;
@@ -134,47 +127,53 @@ p {
   color: var(--accent-hover);
 }
 
-/* 10. Sección Manifesto */
-#manifesto final v {
-  margin: 1rem 0;
-  padding: 1rem 0;
-  border-top: 2px solid var(--accent);
+/* 8. Manifiesto final */
+.manifesto {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
 }
 
-#manifesto h2 {
-  font-size: 1.5rem;
+.manifesto h2 {
+  font-size: 1.4rem;
   margin-bottom: 1rem;
   color: var(--fg);
-  font-variation-settings: 'wght' var(--fw-bold);
 }
 
 .manifesto .typewriter {
   overflow: hidden;
   white-space: nowrap;
+  border-right: 2px solid var(--accent);
   font-size: 1rem;
-  color: var(--fg);
-  animation: blink 1s step-end infinite;
+  color: var(--fg-muted);
+  line-height: 1.6;
+  animation: typing 6s steps(80, end), blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
 }
 
 @keyframes blink {
   50% { border-color: transparent; }
 }
 
-/* 11. Botón “volver” */
+/* 9. Botón de volver */
 .volver {
   display: block;
-  margin-top: 2rem;
-  color: var(--fg);
+  margin-top: 3rem;
+  color: var(--fg-muted);
   text-decoration: none;
   font-size: 0.9rem;
   text-align: center;
 }
 
 .volver:hover {
-  color: var(--accent);
+  color: var(--fg);
 }
 
-/* 12. Animación de entrada */
+/* 10. Animaciones de entrada */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -188,12 +187,11 @@ p {
   }
 }
 
-/* 13. Botón Dark Mode */
+/* 11. Botón de Dark Mode */
 .theme-toggle {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
-
   background: var(--accent);
   border: none;
   color: var(--fg);
