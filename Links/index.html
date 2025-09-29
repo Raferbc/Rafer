@@ -1,82 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Conecta con Rafer</title>
-
-  <!-- Tipografía Inter Variable -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- ✅ Ruta correcta al CSS -->
-  <link rel="stylesheet" href="../styles/links.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rafer | Núcleo</title>
+  <link rel="stylesheet" href="../styles/links.css">
 </head>
 <body>
-  <!-- Accesibilidad -->
-  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+  <div class="overlay">
+    <img src="../assets/logo-rafer.png" alt="Logo Rafer" class="logo fade-in">
 
-  <!-- Banner principal -->
-  <div class="overlay" role="banner">
-    <img src="../assets/logo-rafer.png" alt="Logo Rafer" class="logo" />
-    <h1>Rafer</h1>
-    <p>Autonomía. Inteligencia. Evolución.</p>
-    <p>Autonomy. Intelligence. Evolution.</p>
-  </div>
+    <h1 class="fade-in">Conecta con Rafer</h1>
+    <p class="fade-in">Autonomía. Inteligencia. Evolución.</p>
+    <p class="fade-in">Autonomy. Intelligence. Evolution.</p>
 
-  <!-- Contenido principal -->
-  <main id="main-content" role="main">
-    <!-- Links sociales -->
-    <section class="links">
-      <h2>Links</h2>
-      <a href="https://rafer-github.io/rafer/site/" target="_blank">Sitio Web / Website</a>
-      <a href="https://linkedin.com/in/usuario" target="_blank">LinkedIn</a>
-      <a href="https://instagram.com/usuario" target="_blank">Instagram</a>
-      <a href="https://twitter.com/usuario" target="_blank">X (Twitter)</a>
-      <a href="https://youtube.com/usuario" target="_blank">YouTube</a>
-    </section>
+    <div class="links fade-in">
+      <a href="https://tu-sitio-web.com" target="_blank">🌐 Sitio Web / Website</a>
+      <a href="https://linkedin.com/in/tuusuario" target="_blank">🔗 LinkedIn</a>
+      <a href="https://instagram.com/tuusuario" target="_blank">📸 Instagram</a>
+      <a href="https://twitter.com/tuusuario" target="_blank">🐦 X (Twitter)</a>
+      <a href="https://youtube.com/tuusuario" target="_blank">🎥 YouTube</a>
+    </div>
 
-    <!-- Proyectos -->
-    <section class="projects">
+    <div class="projects fade-in">
       <h2>Proyectos / Projects</h2>
-      <a href="https://rafer.com/proyecto1" target="_blank">Proyecto 1 / Project 1</a>
-      <a href="https://rafer.com/proyecto2" target="_blank">Proyecto 2 / Project 2</a>
-      <a href="https://rafer.com/proyecto3" target="_blank">Proyecto 3 / Project 3</a>
-    </section>
+      <ul>
+        <li><a href="https://rafer.com/proyecto1" target="_blank">⚡ Proyecto 1 / Project 1</a></li>
+        <li><a href="https://rafer.com/proyecto2" target="_blank">🌱 Proyecto 2 / Project 2</a></li>
+        <li><a href="https://rafer.com/proyecto3" target="_blank">🧠 Proyecto 3 / Project 3</a></li>
+      </ul>
+    </div>
 
-    <!-- Contacto -->
-    <section class="contact">
-      <h2>Contacto</h2>
-      <p><a href="mailto:raulf@rafer.com">raulf@rafer.com</a></p>
-    </section>
-  </main>
+    <div class="contact fade-in">
+      <h2>Contacto / Contact</h2>
+      <p>Email: <a href="mailto:raul@rafer.com">raul@rafer.com</a></p>
+    </div>
 
-  <!-- Botón Dark Mode -->
-  <button class="theme-toggle" aria-label="Cambiar tema">Modo oscuro</button>
-
-  <!-- Script funcional -->
-  <script>
-    (function () {
-      const html = document.documentElement;
-      const btn = document.querySelector('.theme-toggle');
-      const stored = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const theme = stored || (prefersDark ? 'dark' : 'light');
-
-      html.setAttribute('data-theme', theme);
-      btn.textContent = theme === 'dark' ? 'Modo claro' : 'Modo oscuro';
-
-      btn.addEventListener('click', () => {
-        const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        html.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-        btn.textContent = next === 'dark' ? 'Modo claro' : 'Modo oscuro';
-      });
-    })();
-  </script>
+    <a href="../index.html" class="volver">← Volver al inicio / Back to Home</a>
+  </div>
 </body>
 </html>
