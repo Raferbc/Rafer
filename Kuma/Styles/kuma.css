@@ -48,8 +48,8 @@ p {
   display: block;
   margin: 0.5rem 0;
   padding: 0.8rem;
-  background-color: #e50914;
-  color: white;
+  background-color: white;
+  color: black;
   text-decoration: none;
   border-radius: 6px;
   transition: background 0.3s ease;
@@ -57,7 +57,7 @@ p {
 }
 
 .links a:hover {
-  background-color: #ff2a2a;
+  background-color: #ddd;
 }
 
 /* Contacto */
